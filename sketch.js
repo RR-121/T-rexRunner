@@ -62,6 +62,7 @@ function setup() {
   
   gameOver = createSprite(width/2,height/2);
   gameOver.addImage("game_Over", gameOverImage);
+  gameOver.scale = 0.7;
   
   restart = createSprite(width/2,height*2/3);
   restart.addImage("restart", restartImage);
@@ -91,7 +92,7 @@ function draw() {
   if(gameState === PLAY) {
     score = score+Math.round(getFrameRate()/60);
     
-    ground.velocityX = -(3*score/100+4.5);
+    ground.velocityX = -(3*score/100+4.3);
     
     text('Score '+score,width-120,20);
     
@@ -191,7 +192,7 @@ function spawnObstacles() {
     var num = Math.round(random(1,5));
     
     var obstacle = createSprite(width,height-90,10,40);
-    obstacle.velocityX = -(3*score/100+5);
+    obstacle.velocityX = -(3*score/100+5.5);
     obstacle.scale = 0.5;
     obstacle.lifetime = 300;
     
